@@ -1,0 +1,32 @@
+local c = require("gruber-dark.palette")
+
+return {
+  DiagnosticError = { fg = c.red },
+  DiagnosticWarn = { fg = c.orange },
+  DiagnosticInfo = { fg = c.blue },
+  DiagnosticHint = { fg = c.green },
+  DiagnosticOk = { fg = c.green },
+  DiagnosticUnderlineError = { undercurl = true, sp = c.red },
+  DiagnosticUnderlineWarn = { undercurl = true, sp = c.orange },
+  DiagnosticUnderlineInfo = { undercurl = true, sp = c.blue },
+  DiagnosticUnderlineHint = { undercurl = true, sp = c.green },
+  LspReferenceText = { bg = c.bg_high },
+  LspReferenceRead = { bg = c.bg_high },
+  LspReferenceWrite = { bg = c.bg_high },
+  LspSignatureActiveParameter = { fg = c.yellow, bold = true },
+
+  ["@lsp.type.class"] = { link = "Type" },
+  ["@lsp.type.decorator"] = { fg = c.purple },
+  ["@lsp.type.enum"] = { link = "Type" },
+  ["@lsp.type.enumMember"] = { link = "Constant" },
+  ["@lsp.type.function"] = { link = "Function" },
+  ["@lsp.type.interface"] = { link = "Type" },
+  ["@lsp.type.macro"] = { link = "Macro" },
+  ["@lsp.type.method"] = { link = "Function" },
+  ["@lsp.type.namespace"] = { link = "Type" },
+  ["@lsp.type.parameter"] = { link = "Identifier" },
+  ["@lsp.type.property"] = { fg = c.fg_bright },
+  ["@lsp.type.struct"] = { link = "Type" },
+  ["@lsp.type.type"] = { link = "Type" },
+  ["@lsp.type.variable"] = { link = "Identifier" },
+}

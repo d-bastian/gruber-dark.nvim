@@ -1,8 +1,29 @@
 # gruber-dark.nvim
 
-A ready-to-go Neovim colorscheme inspired by the classic Gruber Dark / Gruber Darker palette.
+A polished Neovim colorscheme inspired by the classic Gruber Dark / Gruber Darker palette.
 
-## Install with Lazy.nvim
+## Features
+
+- Gruber Dark inspired palette
+- Treesitter support
+- LSP diagnostics and semantic token highlights
+- Telescope
+- Neo-tree and NvimTree
+- nvim-cmp and blink.cmp
+- GitSigns
+- WhichKey
+- lazy.nvim
+- lualine theme
+- Oil.nvim
+- Snacks.nvim
+- Render Markdown
+- Noice and Notify basics
+- Optional transparent background
+- Terminal colors
+
+## Installation
+
+### Lazy.nvim
 
 ```lua
 {
@@ -14,10 +35,6 @@ A ready-to-go Neovim colorscheme inspired by the classic Gruber Dark / Gruber Da
     require("gruber-dark").setup({
       transparent = false,
       terminal_colors = true,
-      styles = {
-        comments = { italic = true },
-        keywords = { bold = true },
-      },
     })
 
     vim.cmd.colorscheme("gruber-dark")
@@ -25,32 +42,11 @@ A ready-to-go Neovim colorscheme inspired by the classic Gruber Dark / Gruber Da
 }
 ```
 
-For a local install, put this folder somewhere such as:
-
-```text
-~/.config/nvim/plugins/gruber-dark.nvim
-```
-
-Then use Lazy.nvim with:
-
-```lua
-{
-  dir = "~/.config/nvim/plugins/gruber-dark.nvim",
-  name = "gruber-dark",
-  lazy = false,
-  priority = 1000,
-  config = function()
-    require("gruber-dark").setup()
-    vim.cmd.colorscheme("gruber-dark")
-  end,
-}
-```
-
-## Install with Packer
+### Packer
 
 ```lua
 use({
-  "~/.config/nvim/plugins/gruber-dark.nvim",
+  "d-bastian/gruber-dark.nvim",
   config = function()
     require("gruber-dark").setup()
     vim.cmd.colorscheme("gruber-dark")
@@ -58,61 +54,84 @@ use({
 })
 ```
 
-## Manual install
+### Manual install
 
-Copy this folder into:
-
-```text
-~/.config/nvim/pack/themes/start/gruber-dark.nvim
+```bash
+mkdir -p ~/.config/nvim/pack/themes/start
+git clone https://github.com/d-bastian/gruber-dark.nvim ~/.config/nvim/pack/themes/start/gruber-dark.nvim
 ```
 
-Then add this to your `init.lua`:
+Then in `init.lua`:
 
 ```lua
 vim.cmd.colorscheme("gruber-dark")
 ```
 
-## Options
+## Configuration
 
 ```lua
 require("gruber-dark").setup({
   transparent = false,
   terminal_colors = true,
+  dim_inactive = false,
   styles = {
     comments = { italic = true },
     keywords = { bold = true },
     functions = {},
     variables = {},
   },
+  integrations = {
+    blink_cmp = true,
+    cmp = true,
+    gitsigns = true,
+    indent_blankline = true,
+    lazy = true,
+    lsp = true,
+    lualine = true,
+    mini = true,
+    neo_tree = true,
+    noice = true,
+    notify = true,
+    nvim_tree = true,
+    oil = true,
+    render_markdown = true,
+    snacks = true,
+    telescope = true,
+    treesitter = true,
+    which_key = true,
+  },
 })
 ```
 
-## Included integrations
+## Lualine
 
-- Treesitter
-- LSP diagnostics
-- Telescope
-- Neo-tree
-- NvimTree
-- nvim-cmp
-- blink.cmp
-- GitSigns
-- WhichKey
-- lazy.nvim
-- lualine highlight groups
-- indent-blankline / mini.indentscope
-- Noice / Notify basics
+```lua
+require("lualine").setup({
+  options = {
+    theme = "gruber-dark",
+  },
+})
+```
 
 ## Palette
 
-- Background: `#181818`
-- Dark background: `#101010`
-- Highlight background: `#282828`
-- Foreground: `#e4e4ef`
-- Bright foreground: `#f4f4ff`
-- Yellow: `#ffdd33`
-- Green: `#73c936`
-- Blue: `#96a6c8`
-- Orange/comment: `#cc8c3c`
-- Red: `#f43841`
-- Purple: `#9e95c7`
+| Name | Hex |
+|---|---|
+| bg | `#181818` |
+| bg_dark | `#101010` |
+| bg_high | `#282828` |
+| bg_visual | `#453d41` |
+| fg | `#e4e4ef` |
+| fg_bright | `#f4f4ff` |
+| fg_muted | `#95a99f` |
+| gray | `#52494e` |
+| yellow | `#ffdd33` |
+| green | `#73c936` |
+| blue | `#96a6c8` |
+| red | `#f43841` |
+| orange | `#cc8c3c` |
+| purple | `#9e95c7` |
+
+## License
+
+MIT
