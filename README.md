@@ -1,4 +1,4 @@
-# gruber-dark.nvim
+# Gruber Dark
 
 A polished Neovim colorscheme inspired by the classic Gruber Dark / Gruber Darker palette.
 
@@ -132,6 +132,3 @@ require("lualine").setup({
 | orange | `#cc8c3c` |
 | purple | `#9e95c7` |
 
-## License
-
-MIT
